@@ -18,13 +18,13 @@
         <java.version>21</java.version>
         <spring-boot-dependencies.version>3.1.4</spring-boot-dependencies.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <lombok.version>1.18.28</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <spotless.version>2.40.0</spotless.version>
         <spring-kafka.version>3.0.11</spring-kafka.version>
         <kafka-streams.version>3.6.0</kafka-streams.version>
         <testcontainers-bom.version>1.19.1</testcontainers-bom.version>
-        <spring-amqp-bom.version>3.0.9</spring-amqp-bom.version>
-        <slf4j-api.version>1.7.30</slf4j-api.version>
+        <slf4j-bom.version>2.0.9</slf4j-bom.version>
+        <jackson-annotations.version>2.15.2</jackson-annotations.version>
     </properties>
 
     <dependencyManagement>
@@ -44,9 +44,16 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.springframework.amqp</groupId>
-                <artifactId>spring-amqp-bom</artifactId>
-                <version>${spring-amqp-bom.version}</version>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-bom</artifactId>
+                <version>${slf4j-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -65,21 +72,9 @@
             </dependency>
 
             <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>testcontainers-bom</artifactId>
-                <version>${testcontainers-bom.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j-api.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-jdk14</artifactId>
-                <version>${slf4j-api.version}</version>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson-annotations.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
